@@ -2,7 +2,7 @@ name: linux-raspberrypi-org
 version: 5.1.17+rpi
 summary: The raspberrypi.org Linux kernel built for the pi4
 description: This is the raspberrypi.org Linux kernel built for the pi4
-    using the 32bit armhf architecture.
+    using the 64bit arm64 architecture.
 base: core18
 grade: stable
 confinement: strict
@@ -10,7 +10,7 @@ type: kernel
 
 architectures:
   - build-on: amd64
-    run-on: armhf
+    run-on: arm64
 
 parts:
   firmware:
@@ -43,6 +43,6 @@ parts:
     build-packages:
       - cpio
       - libssl-dev
-      - on amd64 to armhf:
+      - on amd64 to arm64:
         - gcc-arm-linux-gnueabihf:amd64
     after: [ firmware ]
